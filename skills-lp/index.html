@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Skills LP – HTML/CSS/JS</title>
+  <meta name="description" content="HTML/CSS/JSの実装スキルを1ページに凝縮したデモLP">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="wrap header-flex">
+      <strong>Skills LP</strong>
+      <nav aria-label="ページ内ナビ">
+        <a href="#layout">Layout</a>
+        <a href="#theme">Theme</a>
+        <a href="#observer">Observer</a>
+        <a href="#form">Form</a>
+      </nav>
+      <button id="themeBtn" class="btn small">Theme</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="hero">
+      <h1>“デザインより、再現性と読みやすさ”</h1>
+      <p class="muted">HTML / CSS / JS の基本を1ページに凝縮</p>
+      <a class="btn" href="#layout">できることを見る</a>
+    </section>
+
+    <section id="layout">
+      <h2>1) レスポンシブレイアウト（Grid + Clamp）</h2>
+      <div class="grid">
+        <img src="assets/img/sample1.jpg" alt="サンプル1" loading="lazy">
+        <img src="assets/img/sample2.jpg" alt="サンプル2" loading="lazy">
+      </div>
+      <p>画面幅に応じて自動で1〜2カラムに切り替え。</p>
+    </section>
+
+    <section id="theme">
+      <h2>2) テーマ切替（CSS変数 + JS）</h2>
+      <p>ボタンで <code>:root[data-theme]</code> を切り替え。</p>
+    </section>
+
+    <section id="observer">
+      <h2>3) IntersectionObserverでScrollSpy</h2>
+      <p>可視セクションに <code>aria-current="page"</code> を付与。固定ヘッダー分のオフセットで移動。</p>
+    </section>
+
+    <section id="form">
+      <h2>4) フォーム（静的／疑似送信）</h2>
+      <form id="contact" novalidate>
+        <div class="form-top">
+          <label>お名前<br>
+            <input id="name" name="name" type="text" required placeholder="山田 太郎">
+          </label>
+          <label>メール<br>
+            <input id="email" name="email" type="email" required placeholder="you@example.com" aria-describedby="msg">
+          </label>
+        </div>
+        <div class="form-bottom">
+          <label>メッセージ<br>
+            <textarea name="message" rows="4" required placeholder="お問い合わせ内容をご記入ください。"></textarea>
+          </label>
+        </div>
+        <button class="btn" type="submit">送信</button>
+        <div id="msg" aria-live="polite" class="muted small"></div>
+        <p class="muted small">※サーバー送信なし（JSで画面内完結）</p>
+      </form>
+    </section>
+
+    <footer class="muted small">© 2025 Skills LP</footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
